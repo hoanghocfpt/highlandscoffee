@@ -539,6 +539,7 @@ footer .private a{
     }
 
     .menu-product .product-item .product-item-container{
+        flex: 1 0 auto;
         width: 150px; 
     }
     .menu-product .product-item .product-item-container .product-heading{

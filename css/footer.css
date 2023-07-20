@@ -1,0 +1,181 @@
+
+footer{
+    background-color: #C62831;
+}
+
+footer .footer-container{
+    padding: 50px 5%;
+    display: flex;
+    justify-content: space-between;
+
+}
+footer .footer-container .brand{
+    width: 30%;
+}
+footer .footer-container .brand .des{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 15px 0;
+    display: inline-block;
+}
+footer .footer-container .brand .news{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+footer .footer-container .brand .news span{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+footer .footer-container .brand .news .send{
+    
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+footer .footer-container .brand .news .send input{
+    border: none;
+    outline: none;
+    width: 80%;
+    padding: 0 12px;
+}
+footer .footer-container .brand .news .send input::placeholder{
+    color: #777;
+    font-weight: 300;
+}
+footer .footer-container .brand .news .send .send-btn{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9BAE6C;
+    color: #fff;
+}
+footer .footer-container .brand .news .send svg{
+    width: 24px;
+}
+footer .footer-container .brand .logo img{
+    height: 80px;
+
+}
+
+
+
+footer .footer-container .menu-link{
+    width: 50%;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    padding-left: 20px;
+    gap: 16px;
+    
+}
+footer .footer-container .menu-link .menu-link-item{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+footer .footer-container .menu-link .menu-link-item .title{
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+footer .footer-container .menu-link .menu-link-item a{
+    text-decoration: none;
+    padding: 7px 0;
+    color: #ffffffc7;
+    font-weight: 300;
+    font-size: 16px;
+    
+}
+
+footer .footer-container .menu-link .menu-link-item a:hover{
+    color: #fff;
+}
+footer .footer-container .pay span{
+    color: #fff;
+    font-weight: 400;
+    padding: 20px 0 10px;
+    display: inline-block;
+
+}
+footer .footer-container .pay .img-pay{
+    background-color: #fff;
+    border-radius: 6px;
+    text-align: center;
+    padding: 5px;
+}
+footer .footer-container .pay .img-pay img{
+    box-sizing: content-box;
+    height: 45px;
+    padding: 5px;
+}
+
+footer .private{
+    border-top: 1px solid #ffffff53;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;   
+    font-size: 14px;
+}
+
+footer .private a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* PHẦN GIAO DIỆN MOBILE  */
+@media (max-width: 575.98px) {
+    
+    footer .footer-container{
+        padding: 30px 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    footer .footer-container .brand .logo img{
+        height: 50px;
+    
+    }
+    footer .footer-container .brand{
+        width: 100%;
+    }
+    footer .footer-container .brand .des{
+        /* display: none; */
+        
+        font-size: 14px;
+    }
+
+    footer .footer-container .menu-link{
+        display: none;
+    }
+    footer .footer-container .pay{
+        display: none;
+    }
+    footer .private{
+        justify-content: center;
+    }
+    footer .private .link{
+        display: none;
+    }
+    footer .private span:nth-child(2){
+        display: none;
+    }
+  }
