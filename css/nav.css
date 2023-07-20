@@ -105,7 +105,7 @@
 .container nav div .search-shop{
     display: flex;
     align-items: center;
-    padding-right: 25px;
+    padding-right: 18px;
     color: #fff;
 }
 
@@ -123,7 +123,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding-right: 25px;
+    padding-right: 16px;
     color: #fff;
 }
 .container nav div .cart-icon a{
@@ -131,12 +131,29 @@
     
 }
 .container nav div .cart-icon svg{
-    width: 22px;
+    width: 26px;
+}
+
+.container nav div .user-icon{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-right: 25px; */
+    color: #fff;
+}
+.container nav div .user-icon a{
+    color: #fff;
+    
+}
+.container nav div .user-icon svg{
+    width: 28px;
 }
 .container nav div .cart-icon .count-product{
     position: absolute;
     top: -5px;
-    right: 20px;
+    right: 14px;
     font-size: 12px;
     font-weight: 600;
 }

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
 *{
     padding: 0;
     margin: 0;
@@ -11,89 +10,12 @@
 html{
     scroll-behavior: smooth;
 }
-.header{
-    height: 70px;
-    background-color: #f0ebeb;
 
-}
-
-.header nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    background-color: #C62831;
-    padding: 5px 5%;
-
-}
-
-.header nav > div{
-    display: flex;
-    align-items: center;
-}
-
-.header nav div .logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.header nav div .logo img{
-    height: 60px;
-}
-
-.header nav div .menu-link{
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-}
-
-.header nav div .menu-link a{
-    text-decoration: none;
-    color: #ffffff80;
-    font-weight: 300;
-    font-size: 16px;
-    padding: 0 13px;
-}
-
-.header nav div .menu-link a:hover{
-    color: #fff;
-}
-.header nav div .menu-link a:first-child{
-    color: #fff;
-}
-
-.header nav div .search-shop{
-    display: flex;
-    align-items: center;
-    padding-right: 25px;
-    color: #fff;
-}
-
-.header nav div .search-shop span{
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.header nav div .search-shop svg{
-    width: 24px;
-    margin-right: 8px;
-}
-
-.header nav div .languages{
-    color: #fff;
-    font-weight: 300;
-}
-
-.header nav div .languages .live{
-    font-weight: 600;
-}
 .body{
     height: 600px;
     padding: 50px;
     width: 100%;
-    background-color: rgb(225, 241, 241);
+    
     display: flex;
 }
 .section-coffe{
@@ -132,38 +54,51 @@ form{
    
 }
 form > div{
-    padding: 8px 0;
+    padding: 4px 0;
 }
 label{ 
-display: block;
-text-align: left;
+    display: block;
+    text-align: left;
+    padding-left: 6px;
+    font-size: 13px;
 }
 .place{
     border: 1.2px solid #ccc;
     outline: none;
     margin: 5px 0;
     width: 100%;
-    background-color: #dbdbdb;
+    /* background-color: #dbdbdb; */
     border-radius: 999px;
     padding: 10px 15px;
+}
+
+.place::placeholder{
+    color: #777;
+    font-weight: 300;
 }
 
 .button-in1 {
     width: 50%;
     font-size: 16px;
+    font-weight: 600;
     border: none;
     outline: none;
     padding: 10px 30px;
     color: #fff;
-    background-color: #3b3535;
+    /* background-color: #3b3535; */
+    background-color: #C62831;
+    border: 1px solid #C62831;
     margin: 25px 127px 10px;
     text-align: center;
     cursor: pointer;
+    transition: all .2s ease-in-out;
     border-radius: 999px;
  
 }
 .button-in1:hover{
-    background-color: #C62831;
+    background-color: #fff;
+    color: #C62831;
+    border: 1px solid #C62831;
 }
 
  form h6{
@@ -183,7 +118,20 @@ color: rgb(4, 73, 4);
     align-items: center;
 
 }
-.button-in2{
+.login-other-container{
+    padding-top: 15px;
+}
+.login-other-container .or{
+    display: inline-block;
+    padding: 0px 0 5px;
+}
+
+.google{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     font-size: 14px;
     color: #7e7979;
     background-color: #ffffff;
@@ -194,11 +142,17 @@ color: rgb(4, 73, 4);
     border :1px solid rgb(185, 185, 185)
 }
 
-.button-in2:hover{
-   background-color: #C62831; 
+form a{
+    text-decoration: none;
+    color: #C62831;
 }
-.button-in3{
-    
+
+.facebook{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     font-size: 14px;
     color: #7e7979;
     background-color: #ffffff;
@@ -209,8 +163,6 @@ color: rgb(4, 73, 4);
     border :1px solid rgb(185, 185, 185)
     
 }
-.button-in3:hover{
-    background-color: #C62831; 
- }
+
  
 

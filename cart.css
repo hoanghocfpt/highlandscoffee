@@ -332,6 +332,7 @@ body{
 
 .container .container-order .your-order{
     flex: 1;
+    height: max-content;
     background-color: #fff;
     border-radius: 20px;
     padding: 30px 30px 20px;
@@ -344,13 +345,26 @@ body{
 
 }
 .container .container-order .your-order .container-your-order{
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .container .container-order .your-order .container-your-order .products{
     display: flex;
     flex-direction: column;
     gap: 12px;
     padding: 20px 0;
+}
+.container .container-order .your-order .container-your-order .products .cart-empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.container .container-order .your-order .container-your-order .products .cart-empty span{
+    font-size: 18px;
+    font-weight: 600;
+    color: #4F392E;
 }
 .container .container-order .your-order .container-your-order .products .product-item{
     display: flex;
@@ -450,8 +464,12 @@ body{
 }
 .container .container-order .your-order .container-your-order .discount-and-bill{
     display: flex;
+    justify-content: center;
     gap: 20px;
 
+}
+.container .container-order .your-order .container-your-order .discount-and-bill .khuyenmai{
+    color: #C62831;
 }
 .container .container-order .your-order .container-your-order .discount-and-bill .discount-code{
     width: 40%;
@@ -479,6 +497,22 @@ body{
 }
 .container .container-order .your-order .container-your-order .discount-and-bill .bill{
     flex: 1;
+}
+.container .container-order .your-order .container-your-order .discount-and-bill .btn-link-to-menu{
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #C62831;
+    width: 100%;
+    max-width: 300px;
 }
 .container .container-order .your-order .container-your-order .into-money div{
     width: 100%;
@@ -520,6 +554,8 @@ body{
     background-color: #C62831;
     width: 100%;
 }
+
+
 
 
 /* FOOTER CSS  */

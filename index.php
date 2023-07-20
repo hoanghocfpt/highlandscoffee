@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    $cart = [];
+    if((isset($_SESSION['cart']))&&(!empty($_SESSION['cart']))){
+        $cart[] = $_SESSION['cart'];
+        // print_r($cart);
+    };
+
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -168,10 +177,10 @@
     </div>
     
     <script src="js/our-alltime-favorites.js"></script>
-    <script src="js/cart.js"></script>
+    <!-- <script src="js/cart.js"></script> -->
     <script src="js/slider.js"></script>
    
-    <script src="js/add-to-cart.js"></script>
+    <!-- <script src="js/add-to-cart.js"></script> -->
     <script src="js/menutab.js"></script>
 </body>
 </html>

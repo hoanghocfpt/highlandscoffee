@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.account-container{
+    display: flex;
+    padding: 25px 5%;
+    gap: 4%;
+}
+.account-container .account-dashboard{
+    border-right: 1px solid #ccc;
+    width: 300px;
+    /* background-color: #ccc; */
+}
+.account-container .account-dashboard .account-dashboard-list{
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+
+}
+.account-container .account-dashboard .account-dashboard-list a .account-dashboard-item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.account-container .account-dashboard .account-dashboard-list a{
+    padding: 16px 0;
+    border-top: 1px solid #ccc;
+    display: inline-block;
+    text-decoration: none;
+    
+
+}
+.account-container .account-dashboard .account-dashboard-list a .account-dashboard-item .title-item{
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+}
+.account-container .account-dashboard .account-dashboard-list a:hover .icon-item{
+    fill: #C62831;
+}
+.account-container .account-dashboard .account-dashboard-list a:hover .title-item{
+    color: #C62831;
+}
+.account-container .account-dashboard .account-dashboard-list a .account-dashboard-item .icon-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.account-container svg{
+    width: 18px;
+    
+}

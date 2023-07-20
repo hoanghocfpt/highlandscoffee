@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    $cart = [];
+    if((isset($_SESSION['cart']))&&(!empty($_SESSION['cart']))){
+        $cart[] = $_SESSION['cart'];
+        // print_r($cart);
+    };
+?>
 <!DOCTYPE html>
 <html lang="en">
 
