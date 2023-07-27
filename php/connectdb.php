@@ -1,19 +1,18 @@
 <?php
-
 function connectDb(){
-    $host = 'localhost'; // tên host
-    $dbname = 'highlandscoffee'; // tên database
-    $username = 'root'; // tên người dùng
-    $password = ''; // mật khẩu
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
 
     try {
-        $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password); // kết nối với database
-        echo "Kết nối thành công!";
-    } catch (PDOException $e) {
-        echo "Lỗi kết nối: " . $e->getMessage(); // báo lỗi nếu kết nối không thành công
+        $conn = new PDO("mysql:host=$servername;dbname=highlandscoffee", $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // echo "Connected successfully";
+    }catch(PDOException $e) {
+        // echo "Connection failed: " . $e->getMessage();
     }
-    // return $dbh;
+    return $conn;
 };
-
 
 ?>

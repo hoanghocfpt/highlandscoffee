@@ -1,9 +1,15 @@
 <?php
     session_start();
     $cart = [];
+    include 'php/checkAccount.php';
     if((isset($_SESSION['cart']))&&(!empty($_SESSION['cart']))){
         $cart[] = $_SESSION['cart'];
         // print_r($cart);
+    };
+    // Kiểm tra tài khoản có được login hay không, nếu không thì chuyển thẳng về trang đăng nhập
+    if((isset($_SESSION['account']))&&(!empty($_SESSION['account']))){
+        header('location: my-account.php');
+      
     };
 ?>
 <!DOCTYPE html>
@@ -35,10 +41,10 @@
             <aside>
                 <div class="accout-aside">
                     <h1>Chào Mừng Bạn Đến Highlands</h1>
-
-                    <form action="php/checkAccount.php" method="post">
-                        <div><label for="email"> Email</label>
-                            <input name="email" class="place" type="email" placeholder="Nhập địa chỉ email, vd: abc@gmail.com"
+                    <div class="form-message"><?php echo $mess ?></div>
+                    <form action="dangnhap.php" method="post">
+                        <div><label for=""> Tên đăng nhập</label>
+                            <input name="email" class="place" type="text" placeholder="Nhập địa chỉ email hoặc username, vd: abc@gmail.com"
                                 id="name">
                         </div>
                         <div>
@@ -47,7 +53,7 @@
                         </div>
 
                         <input name="login" type="submit" value="Đăng nhập" class="button-in1">
-                        <span> Bạn chưa có tài khoản?<a href="account/dangky.php"> Đăng ký</a></span>
+                        <span> Bạn chưa có tài khoản?<a href="dangky.php"> Đăng ký</a></span>
                         <div class="login-other-container">
                             <span class="or">Hoặc</span>
                             <div class="login-other">

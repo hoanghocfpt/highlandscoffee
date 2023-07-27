@@ -28,7 +28,7 @@ function loadProductCart($arr){
                             </svg>
     
                         </div>
-                        <div id="quantity-product">1</div>
+                        <div id="quantity-product">'.$value[4].'</div>
                         <div class="plus">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -39,7 +39,7 @@ function loadProductCart($arr){
                     </div>
                 </div>
                 <div class="price-product">
-                '.$value[3].'
+                '.number_format($value[3]*$value[4],0,',','.').'
                 </div>
                 <a href="php/deleteProductCart.php?id='.$idcart.'">
                 <div class="delete-product">

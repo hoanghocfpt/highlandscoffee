@@ -26,28 +26,6 @@ function openMenuList(){
     });
 }
 
+openMenuList()
 
-if (window.matchMedia('(max-width: 768px)').matches) {
-    // Màn hình di động
-    openMenuList()
 
-} else {
-    // Màn hình desktop
-    downIcon.style.display = 'none';
-    list.style.display = 'block'; 
-}
-
-window.addEventListener('resize', function(){
-    console.log(2);
-    if (window.matchMedia('(max-width: 768px)').matches) {
-        // Màn hình di động
-        downIcon.style.display = '';
-        list.style.display = 'none';
-        openMenuList()
-    
-    } else {
-        // Màn hình desktop
-        downIcon.style.display = 'none';
-        list.style.display = 'block'; 
-    }
-})

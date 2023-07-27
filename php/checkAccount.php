@@ -1,21 +1,33 @@
 <?php 
-session_start();
+include 'connectdb.php';
+
+$conn = connectDb();
 $account = [];
-$emailAdmin = 'admin@gmail.com';
-$passAdmin = '123456';
-if((isset($_POST['login']))&&($_POST['login'])){
-    $email = $_POST['email'];
-    $pass = $_POST['password'];
-    if($email === $emailAdmin && $pass === $passAdmin){
-        echo 'Login thành công!")';
-        $account[] = [$email,$pass];
+$mess = '';
+if((isset($_POST['login']))&&(!empty($_POST['login']))){
+    $username = $_POST['email'];
+    $password = $_POST['password'];
+    // Lấy dữ liệu từ database
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
+    // bindParam dùng để gán giá trị cho phần SQL truy vấn
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $kq = $stmt->fetchAll();
+    if(count($kq) > 0){
+        if($username === $kq[0]['username'] && $password === $kq[0]['password']){
+            $account[] = [$username,$password];
+            $_SESSION['account'] = $account;
+            header('location: ../my-account.php');
+            
+        }else{
+            $mess = 'Đăng nhập thất bại!';
+        };
     }else{
-        echo 'Đăng nhập thất bại!';
+        $mess = 'Đăng nhập thất bại!';
     };
-    if((isset($_SESSION['account']))&&(!empty($_SESSION['account']))){
-        $_SESSION['account'] = $account;
-    };
-    print_r($account);
-    header('location: ../account');
+
+    
+
 };
 ?>

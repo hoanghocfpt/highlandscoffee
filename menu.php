@@ -5,6 +5,7 @@
         $cart[] = $_SESSION['cart'];
     };
     include 'php/loadProductMenu.php';
+    
 ?>
 <!DOCTYPE html>
 <html lang="vi">

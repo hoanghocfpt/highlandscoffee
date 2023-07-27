@@ -9,7 +9,7 @@ function loadingProductHot($arr) {
     for ($i = 0; $i < count($arr); $i++) {
         foreach ($arr[$i] as $value) {
             $result .= '<div class="product-item-container">
-        <a href="menu.php?id='.$value['id'].'">
+        <a href="product.php?id='.$value['id'].'">
             <div class="product-img">
             <img src="'.$value['img'].'" alt="">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 save">

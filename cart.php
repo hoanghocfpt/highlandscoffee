@@ -5,6 +5,10 @@
         $cart[] = $_SESSION['cart'];
         // print_r($cart);
     };
+    include 'php/getUser.php';
+    $kq = getUser();
+    // print_r($kq);
+    
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -42,8 +46,8 @@
                         </div>
                     </div>
                     <div class="input">
-                        <input type="text" placeholder="Tên của bạn">
-                        <input type="text" placeholder="Số điện thoại">
+                        <input type="text" placeholder="Tên của bạn" value="<?php if(count($kq) > 0){echo $kq[0]['name']; }; ?>">
+                        <input type="text" placeholder="Số điện thoại" value="<?php if(count($kq) > 0){echo $kq[0]['phone']; }; ?>">
                         <input type="text" placeholder="Ghi chú mua hàng">
                     </div>
                 </div>

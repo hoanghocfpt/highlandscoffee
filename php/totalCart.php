@@ -10,7 +10,7 @@
             for ($i=0; $i < count($arr); $i++) { 
                 foreach ($arr[$i] as $value) {
                     // print_r($arr[$i]);
-                    $sum += $value[3];
+                    $sum += $value[3]*$value[4];
                             
                 }
             }
@@ -23,21 +23,21 @@
                         <div class="into-money">
                             <div class="thanhtien">
                                 <span>Thành tiền</span>
-                                <span>'.$sum.'</span>
+                                <span>'.number_format($sum,0,',','.').'</span>
                             </div>
                             <div class="phigiaohang">
                                 <span>Phí giao hàng</span>
-                                <span>'.$phigiaohang.'</span>
+                                <span>'.number_format($phigiaohang,0,',','.').'</span>
                             </div>
                             <div class="khuyenmai">
                                 <span>Khuyến mãi</span>
-                                <span>'.'- '.$promotion.'</span>
+                                <span>'.'- '.number_format($promotion,0,',','.').'</span>
                             </div>
                         </div>
                         <div class="total">
                             <div class="tt">
                                 <span>Tổng cộng</span>
-                                <span>'.$total.'</span>
+                                <span>'.number_format($total,0,',','.').'</span>
                             </div>
                             <div class="btn-to-order">
                                 <input type="submit" value="Đặt đơn hàng">

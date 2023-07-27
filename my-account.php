@@ -1,23 +1,25 @@
 <?php 
+    include 'php/getUser.php';
     session_start();
-    include 'php/connectdb.php';
+    
     $cart = [];
     if((isset($_SESSION['cart']))&&(!empty($_SESSION['cart']))){
         $cart[] = $_SESSION['cart'];
         // print_r($cart);
     };
-    // include 'php/checkStatus.php';
-    // if((isset($_SESSION['account']))&&(!empty($_SESSION['account']))){
-    //     $account = $_SESSION['account'];
-    // };
-    // $stt = checkStatus($account);
-    // if($stt === false){
-    //     header('location: dangnhap.php');
-    // }else{
-    //     echo 'Chào mừng!';
-    // };
-    
-    connectDb();
+    // include 'php/check.php';
+    // Kiểm tra tài khoản có được login hay không, nếu không thì chuyển thẳng về trang đăng nhập
+    if((isset($_SESSION['account']))&&(!empty($_SESSION['account']))){
+        $account = $_SESSION['account'];
+        foreach ($account as $value) {
+            $user = $value[0];
+        }
+      
+    }else{
+        header('location: dangnhap.php');
+    };
+    $kq = getUser($user);
+    // print_r($kq);
 
 ?>
 <!DOCTYPE html>
@@ -41,7 +43,7 @@
         <div class="account-container">
             <div class="account-dashboard">
                 <div class="welcome-user">
-                    <h3>Xin chào, Phạm Hoàng!</h3>
+                    <h3>Xin chào, <?php echo $kq[0]['name'] ?>!</h3>
                 </div>
                 <div class="account-dashboard-list">
                     <a href="#">
@@ -72,7 +74,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="php/logout.php">
                         <div class="account-dashboard-item">
                             <div class="icon-item">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -93,8 +95,9 @@
             <div class="account-main">
                 <h2>Thông tin tài khoản</h2>
                 <div class="account-main-container">
-                    <div class="hovaten">Họ tên: Phạm Hoàng</div>
-                    <div class="email">Email: iloveanh18@gmail.com</div>
+                    <div class="tendangnhap">Tên đăng nhập: <?php echo $user ?></div>
+                    <div class="hovaten">Họ tên: <?php echo $kq[0]['name'] ?></div>
+                    <div class="email">Email: <?php echo $kq[0]['email'] ?></div>
                 </div>
             </div>
         </div>

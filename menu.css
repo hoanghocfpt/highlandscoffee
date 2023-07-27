@@ -171,6 +171,13 @@ html{
     flex-shrink: 0;
     max-width: 400px;
     min-width: 300px;
+    height: fit-content;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 40px;
     /* background-color: #7c7c7c; */
     
 }
@@ -183,7 +190,23 @@ html{
     color: #000000cb;
     font-size: 16px;
     font-weight: 500;
+    padding: 13px 15px;
 }
+.container .main .menu-list ul.bac1 div.alllist{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.container .main .menu-list ul.bac1 div.alllist svg{
+    width: 24px;
+}
+.container .main .menu-list ul.bac1 div.alllist span{
+    color: #000000cb;
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .container .main .menu-list ul.bac1 li .bac2{
     padding: 10px 15px;
     color: black;
@@ -522,10 +545,7 @@ footer .private a{
         font-size: 16px;
         font-weight: 500;
     }
-    .container .main .menu-list ul.bac1 div.alllist svg{
-        width: 24px;
-        
-    }
+
     .container .main .menu-list ul.bac1 .list{
         display: none;
     }

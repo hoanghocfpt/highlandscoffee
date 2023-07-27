@@ -1,32 +1,42 @@
-<?php 
+<?php
 session_start();
 include 'dataProduct.php';
-    $products = [];
-    $products[] = $coffee;
-    $products[] = $freeze;
-    $products[] = $tea;
-    $products[] = $cake; 
-// Lấy ID sản phẩm
-if (isset($_GET['id']) && $_GET['id'] !== '') {$id = $_GET['id'];
-    $id = $_GET['id'];
-    // Vòng lặp tìm sản phẩm trùng
-    for ($i = 0; $i < count($products); $i++) {
-        foreach ($products[$i] as $value) {
-            if($id == $value['id']){
-                $cart= array($id, $value['img'], $value['name'], $value['pricedata']);
-            };
-        };
-    };
-    if((!isset($_SESSION['cart']))&&(!empty($_SESSION['cart']))){
-        $_SESSION['cart']=[];
-    }else{
-        $_SESSION['cart'][] = $cart;
-        header('location: /highlandscoffee/cart.php');
-        
-    }
-    // print_r($cart);
-        
-}
 
+$products = array($coffee, $freeze, $tea, $cake);
+
+// Lấy ID sản phẩm
+if (isset($_GET['id']) && $_GET['id'] !== '') {
+    $id = (int)$_GET['id']; // Chuyển $_GET['id'] thành số nguyên
+
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+
+    $fl = 0;
+    foreach ($_SESSION['cart'] as $key => $value) {
+        if ($value !== null && $id == $value[0]) {
+            $_SESSION['cart'][$key][4] += 1;
+            $fl = 1;
+            break;
+        }
+    }
+
+    if ($fl == 0) {
+        // Tìm sản phẩm theo ID trong mảng $products
+        foreach ($products as $productCategory) {
+            foreach ($productCategory as $product) {
+                if ($id == $product['id']) {
+                    // Tạo mảng chứa thông tin sản phẩm mới
+                    $cart = array($id, $product['img'], $product['name'], $product['pricedata'], 1);
+                    $_SESSION['cart'][] = $cart;
+                    break;
+                }
+            }
+        }
+    }
+
+    header('location: /highlandscoffee/cart.php');
+    exit;
+}
 
 ?>

@@ -18,6 +18,12 @@ html{
     
     display: flex;
 }
+.form-message{
+    color: red;
+    padding: 15px 10px;
+    font-size: 16px;
+    
+}
 .section-coffe{
     width: 55%;
     padding: 55px;
